@@ -18,19 +18,32 @@ int i=0;
         setContentView(R.layout.activity_main);
 
         mTextView= (TextView)findViewById(R.id.tv1);
-        mTextView.setOnClickListener(new MyLsntr());
+        mTextView.setOnClickListener(view -> {
+            ((TextView)view).setTextSize(45);
+        });
+
+       findViewById(R.id.btn3).setOnClickListener(this::toShowToastMSH);
+
+    }
+
+    private void toShowToastMSH(View view) {
+        Toast.makeText(MainActivity.this, "Moaath Alrajab",
+                Toast.LENGTH_LONG).show();
+    }
+
+    public void toShowSBMSG(View view) {
+        Snackbar sb= Snackbar.make(view,"Alrajab, Moaath",
+                    Snackbar.LENGTH_LONG);
+            sb.show();
     }
 
 
     class MyLsntr implements View.OnClickListener{
         @Override
         public void onClick(View view) {
-            Toast.makeText(MainActivity.this, "Moaath Alrajab",
-                    Toast.LENGTH_LONG).show();
 
-//            Snackbar sb= Snackbar.make(view,"Alrajab, Moaath",
-//                    Snackbar.LENGTH_LONG);
-//            sb.show();
+
+//
         }
     }
 
