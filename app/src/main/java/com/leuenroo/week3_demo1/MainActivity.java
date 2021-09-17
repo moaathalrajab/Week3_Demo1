@@ -2,6 +2,7 @@ package com.leuenroo.week3_demo1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,7 +20,10 @@ int i=0;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Intent recInt= getIntent();
+
         mTextView= (TextView)findViewById(R.id.tv1);
+        mTextView.setText(""+recInt.getIntExtra("THESUM",0));
         mTextView.setOnClickListener(view -> {
             ((TextView)view).setTextSize(45);
         });
